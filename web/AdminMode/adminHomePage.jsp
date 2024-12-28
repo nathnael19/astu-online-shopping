@@ -9,10 +9,26 @@
         <title>Admin - Online Shopping</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"/>
+        <style>
+            .error-message {
+                color: red;
+                font-size: 0.9em;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
         <%@include file="adminNav.jsp"%>
         <div class="container">
+            <%
+                String errorMessage = (String) request.getAttribute("errorMessage");
+                if (errorMessage != null) {
+            %>
+                <div class="error-message">
+                    <%= errorMessage %>
+                </div>
+            <% } %>
     <div class="row">
         <%
             try {
