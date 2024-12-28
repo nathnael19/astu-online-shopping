@@ -16,6 +16,12 @@
                 border-radius: 8px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
+            .error-message {
+                color: red;
+                font-size: 0.9em;
+                margin-bottom: 15px;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
@@ -23,6 +29,15 @@
         <!-- Add Product Form -->
         <div class="form-container">
             <h2 class="text-center mb-4">Add New Product</h2>
+            <!-- Display Error Message -->
+            <%
+                String errorMessage = (String) request.getAttribute("errorMessage");
+                if (errorMessage != null) {
+            %>
+                <div class="error-message">
+                    <%= errorMessage %>
+                </div>
+            <% } %>
             <form action="../AddProduct" method="post" enctype="multipart/form-data">
                 <div>
                     <input type="file" accept="image/*" name="fileUrl" required>
