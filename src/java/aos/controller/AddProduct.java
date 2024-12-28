@@ -57,17 +57,17 @@ public class AddProduct extends HttpServlet {
 
                 int row2 = ps2.executeUpdate();
                 if (row2 > 0) {
-                    response.sendRedirect("AdminMode/adminHomePage.jsp");
+                    response.sendRedirect("../adminHomePage.jsp");
                 }
             } else {
                 request.setAttribute("errorMessage", "Something went wrong!. Please try again.");
-                request.getRequestDispatcher("AdminMode/addProduct.jsp").forward(request, response);
+                request.getRequestDispatcher("../addProduct.jsp").forward(request, response);
             }
 
         } catch (IOException | SQLException e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", "Something went wrong!. Please try again.");
-            request.getRequestDispatcher("AdminMode/addProduct.jsp").forward(request, response);
+            request.getRequestDispatcher("../addProduct.jsp").forward(request, response);
         }
     }
 }

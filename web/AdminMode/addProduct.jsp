@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Add Product - Online Shopping</title>
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"/>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
         <style>
             .form-container {
                 max-width: 600px;
@@ -80,7 +80,7 @@
         </div>
 
         <!-- Bootstrap JS -->
-        <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>
 
