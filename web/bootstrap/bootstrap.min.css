@@ -4424,11 +4424,8 @@ textarea.form-control-lg{
     --bs-alert-border-color:var(--bs-dark-border-subtle);
     --bs-alert-link-color:var(--bs-dark-text-emphasis)
 }
-@keyframes progress-bar-stripes{
-    0%{
-        background-position-x:1rem
-    }
-}
+
+
 .progress,.progress-stacked{
     --bs-progress-height:1rem;
     --bs-progress-font-size:0.75rem;
@@ -5607,11 +5604,7 @@ textarea.form-control-lg{
     border-radius:50%;
     animation:var(--bs-spinner-animation-speed) linear infinite var(--bs-spinner-animation-name)
 }
-@keyframes spinner-border{
-    to{
-        transform:rotate(360deg)
-    }
-}
+
 .spinner-border{
     --bs-spinner-width:2rem;
     --bs-spinner-height:2rem;
@@ -5627,15 +5620,7 @@ textarea.form-control-lg{
     --bs-spinner-height:1rem;
     --bs-spinner-border-width:0.2em
 }
-@keyframes spinner-grow{
-    0%{
-        transform:scale(0)
-    }
-    50%{
-        opacity:1;
-        transform:none
-    }
-}
+
 .spinner-grow{
     --bs-spinner-width:2rem;
     --bs-spinner-height:2rem;
@@ -6166,11 +6151,7 @@ textarea.form-control-lg{
 .placeholder-glow .placeholder{
     animation:placeholder-glow 2s ease-in-out infinite
 }
-@keyframes placeholder-glow{
-    50%{
-        opacity:.2
-    }
-}
+
 .placeholder-wave{
     -webkit-mask-image:linear-gradient(130deg,#000 55%,rgba(0,0,0,0.8) 75%,#000 95%);
     mask-image:linear-gradient(130deg,#000 55%,rgba(0,0,0,0.8) 75%,#000 95%);
@@ -6178,12 +6159,7 @@ textarea.form-control-lg{
     mask-size:200% 100%;
     animation:placeholder-wave 2s linear infinite
 }
-@keyframes placeholder-wave{
-    100%{
-        -webkit-mask-position:-200% 0%;
-        mask-position:-200% 0%
-    }
-}
+
 .clearfix::after{
     display:block;
     clear:both;
