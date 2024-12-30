@@ -1,6 +1,6 @@
 # Online Shopping Web Application
 
-This project is a simple online shopping web application built with Java Servlets and JSP. It allows users and admins to interact with products and orders seamlessly:
+This project is a simple online shopping web application built with Java Servlets and JSP using mysql as the database for storing informations. It allows users and admins to interact with products and orders seamlessly:
 
 ### Features:
 - **For Users**:
