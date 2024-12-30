@@ -1,5 +1,13 @@
 <%@page import="aos.dao.DatabaseProvider"%>
 <%@page import="java.sql.*" %>
+<%
+            String username11 = (String) session.getAttribute("userName");
+            if (username11 == null) {
+                // User not logged in, redirect to login page
+                response.sendRedirect("../index.jsp");
+                return;
+            }
+        %>
 
 <%                        try {
         Connection con = DatabaseProvider.getConn();

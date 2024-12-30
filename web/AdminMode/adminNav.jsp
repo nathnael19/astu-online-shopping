@@ -7,6 +7,20 @@
         <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </head>
     <body>
+        <%
+            String username5 = (String) session.getAttribute("userName");
+            if (username5 == null) {
+                // User not logged in, redirect to login page
+                response.sendRedirect("../index.jsp");
+                return;
+            }
+        %>
+        <%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
+    response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+    response.setDateHeader("Expires", 0); // Prevent caching
+%>
+
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#"><img class="mx-1 mb-1"src="${pageContext.request.contextPath}/assets/house.svg" alt="home logo">SuQ (Admin)</a>

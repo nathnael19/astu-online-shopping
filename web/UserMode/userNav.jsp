@@ -7,6 +7,14 @@
         <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </head>
     <body>
+        <%
+            String username20 = (String) session.getAttribute("userName");
+            if (username20 == null) {
+                // User not logged in, redirect to login page
+                response.sendRedirect("../index.jsp");
+                return;
+            }
+        %>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand h1" href="#"><img class="m-1" src="../assets/shop.svg" alt="logo"/>Suq</a>

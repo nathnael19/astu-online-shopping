@@ -72,6 +72,14 @@
     </head>
     <body>
         <%
+            String username21 = (String) session.getAttribute("userName");
+            if (username21 == null) {
+                // User not logged in, redirect to login page
+                response.sendRedirect("../index.jsp");
+                return;
+            }
+        %>
+        <%
             int userId = (Integer) session.getAttribute("userId");
 
             String query = "select * from users where userId='" + userId + "';";

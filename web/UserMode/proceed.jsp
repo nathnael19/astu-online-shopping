@@ -23,6 +23,14 @@
     </head>
 
     <body>
+        <%
+            String username17 = (String) session.getAttribute("userName");
+            if (username17 == null) {
+                // User not logged in, redirect to login page
+                response.sendRedirect("../index.jsp");
+                return;
+            }
+        %>
         <%@include file="userNav.jsp"%>
 
         <div class="my-6">

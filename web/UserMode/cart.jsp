@@ -17,6 +17,19 @@
             }</style>
     </head>
     <body>
+<%
+            String username10 = (String) session.getAttribute("userName");
+            if (username10 == null) {
+                // User not logged in, redirect to login page
+                response.sendRedirect("../index.jsp");
+                return;
+            }
+        %>
+        <%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
+    response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+    response.setDateHeader("Expires", 0); // Prevent caching
+%>
 
         <%@include file="userNav.jsp" %>
         <div class="my-6">

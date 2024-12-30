@@ -20,9 +20,9 @@ public class LoginAction2 extends HttpServlet {
             Connection conn = DatabaseProvider.getConn();
             Statement stmt = conn.createStatement();
             if (email.equals("admin@gmail.com") && password.equals("admin")) {
+                session.setAttribute("userName", "admin");
                 response.sendRedirect("AdminMode/adminHomePage.jsp");
             } else {
-
                 String query = "SELECT * FROM users WHERE email='" + email + "' and password='" + password + "'";
                 ResultSet rs = stmt.executeQuery(query);
                 if (rs.next()) {

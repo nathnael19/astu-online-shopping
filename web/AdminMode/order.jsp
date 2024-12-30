@@ -9,6 +9,20 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
     </head>
     <body>
+        <%
+            String username9 = (String) session.getAttribute("userName");
+            if (username9 == null) {
+                // User not logged in, redirect to login page
+                response.sendRedirect("../index.jsp");
+                return;
+            }
+        %>
+        <%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
+    response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+    response.setDateHeader("Expires", 0); // Prevent caching
+%>
+
         <%@include file="adminNav.jsp"%>
         <div>
             <div class="table-responsive">
