@@ -12,7 +12,7 @@
         <%@include file="userNav.jsp" %>
         <div class="container mt-4">
             <% 
-                String query = "SELECT * FROM notifications";
+                String query = "SELECT * FROM notifications ORDER BY nid DESC";
                 try {
                     Connection connection = DatabaseProvider.getConn();
                     PreparedStatement ps = connection.prepareStatement(query);
