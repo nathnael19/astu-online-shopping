@@ -1,5 +1,13 @@
 <%@page import="aos.dao.DatabaseProvider" %>
 <%@page import="java.sql.*" %>
+<%
+            String username2 = (String) session.getAttribute("userName");
+            if (username2 == null) {
+                // User not logged in, redirect to login page
+                response.sendRedirect("../index.jsp");
+                return;
+            }
+        %>
 
 <%
     int orderId = Integer.parseInt(request.getParameter("orderId"));

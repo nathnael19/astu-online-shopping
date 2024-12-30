@@ -1,6 +1,14 @@
 <%@page import="aos.dao.DatabaseProvider"%>
 <%@page import="java.sql.*" %>
 <%
+            String username13 = (String) session.getAttribute("userName");
+            if (username13 == null) {
+                // User not logged in, redirect to login page
+                response.sendRedirect("../index.jsp");
+                return;
+            }
+        %>
+<%
             Integer userId = (Integer) session.getAttribute("userId");
             if (userId == null) {
                 response.sendRedirect("../index.jsp?msg=Login_First");

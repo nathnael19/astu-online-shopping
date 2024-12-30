@@ -8,7 +8,20 @@
         <title>Notification</title>
         <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"/> <!-- Include Bootstrap CSS for styling -->
     </head>
-    <body>
+    <body><%
+            String username14 = (String) session.getAttribute("userName");
+            if (username14 == null) {
+                // User not logged in, redirect to login page
+                response.sendRedirect("../index.jsp");
+                return;
+            }
+        %>
+        <%
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
+    response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+    response.setDateHeader("Expires", 0); // Prevent caching
+%>
+
         <%@include file="userNav.jsp" %>
         <div class="container mt-4">
             <% 
