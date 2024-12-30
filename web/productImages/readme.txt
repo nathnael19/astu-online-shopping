@@ -1,0 +1,1 @@
+it stores the product and other images

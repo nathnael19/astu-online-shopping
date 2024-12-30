@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div style="text-align: center; margin-top: 10px;">
-                        <a href="cart.jsp?productId=<%=rs.getInt(1)%>" class="btn btn-primary btn-sm">Add to Cart</a>
+                        <a href="cartAction.jsp?productId=<%=rs.getInt(1)%>" class="btn btn-primary btn-sm">Add to Cart</a>
                     </div>
                 </div>
             </div>

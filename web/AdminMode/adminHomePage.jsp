@@ -44,7 +44,7 @@
                     <div class="card" style="border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
                         <!-- Image Section -->
                         <div style="text-align: center; padding: 10px;">
-                            <img src="../productImages/<%=rs.getString(4)%>" width="100%" height="150px" alt="Product Image"/>
+                            <img src="${pageContext.request.contextPath}/productImages/<%=rs.getString(4)%>" width="100%" height="150px" alt="Product Image"/>
                         </div>
 
                         <!-- Product Details Section -->
