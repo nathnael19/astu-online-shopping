@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Online Shopping</title>
-        <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"/>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
         <style>.error-message {
                 color: red;
                 font-size: 0.9em;
@@ -28,7 +28,7 @@
         </div>
         <form class="my-2" action="search.jsp" method="post" style="display:flex;justify-content: end">
             <input type="search" name="search" placeholder="Search..."><!-- Search input -->
-            <button type="submit"><img src="../assets/search.svg"></button>
+            <button type="submit"><img src="${pageContext.request.contextPath}/assets/search.svg"></button>
         </form>
 
         <!-- Container for the products -->
@@ -88,6 +88,6 @@
             </div>
         </div>
 
-        <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>

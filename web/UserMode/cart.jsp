@@ -9,11 +9,26 @@
         <title>My Cart</title>
         <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
         <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
+        <style>.error-message {
+                color: red;
+                font-size: 1.1em;
+                margin-bottom: 15px;
+                text-align: center;
+            }</style>
     </head>
     <body>
 
         <%@include file="userNav.jsp" %>
         <div class="my-6">
+            <div class="error-message">
+                <%                    String errorMessage = (String) request.getAttribute("errorMessage");
+                    if (errorMessage != null) {
+                %>
+                <div class="error-message">
+                    <%= errorMessage%>
+                </div>
+                <% }%>
+            </div>
             <div class="table-responsive">
                 <table class="table table-striped table-bordered">
                     <thead class="table-dark">
