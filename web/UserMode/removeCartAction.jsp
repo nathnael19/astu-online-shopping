@@ -12,7 +12,8 @@
 
         int row = stmt.executeUpdate(deleteQuery);
         if (row > 0) {
-            response.sendRedirect("cart.jsp");
+            request.setAttribute("errorMessage", "Successfull Removed from our Cart!!");
+        request.getRequestDispatcher("cart.jsp").forward(request, response);
         }
     } catch (Exception e) {
 

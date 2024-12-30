@@ -4,17 +4,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"/>
-        <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <%
-//            String email = (String)session.getAttribute("loginEmail");
-//            String pass = (String)session.getAttribute("loginPass");
-//            
-//            if(email==null && pass==null){
-//                response.sendRedirect("../index.jsp?msg=Login First");
-//            }
-        %>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand h1" href="#"><img class="m-1" src="../assets/shop.svg" alt="logo"/>Suq</a>
@@ -53,6 +45,6 @@
                 </div>
             </div>
         </nav>
-        <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>

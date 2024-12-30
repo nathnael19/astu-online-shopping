@@ -6,7 +6,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Proceed</title>
-        <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css">
         <style>
             .form-container {
                 max-width: 600px;
@@ -110,6 +110,6 @@
             </form>
         </div>
 
-        <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>

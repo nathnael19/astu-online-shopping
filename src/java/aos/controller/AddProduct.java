@@ -17,7 +17,7 @@ public class AddProduct extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Part file = request.getPart("fileUrl");
         String imageFileName = file.getSubmittedFileName();
-        String uploadPath = "C:/Users/DELL/Documents/NetBeansProjects/clone/astu-online-shopping/web/productImage/" + imageFileName;
+        String uploadPath = "C:/Users/DELL/Desktop/clone/astu-online-shopping/web/productImages/" + imageFileName;
         String name = request.getParameter("name");
         String category = request.getParameter("productCategory");
         String description = request.getParameter("description");
@@ -57,17 +57,17 @@ public class AddProduct extends HttpServlet {
 
                 int row2 = ps2.executeUpdate();
                 if (row2 > 0) {
-                    response.sendRedirect("../adminHomePage.jsp");
+                    response.sendRedirect("AdminMode/adminHomePage.jsp");
                 }
             } else {
                 request.setAttribute("errorMessage", "Something went wrong!. Please try again.");
-                request.getRequestDispatcher("../addProduct.jsp").forward(request, response);
+                request.getRequestDispatcher("AdminMode/addProduct.jsp").forward(request, response);
             }
 
         } catch (IOException | SQLException e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", "Something went wrong!. Please try again.");
-            request.getRequestDispatcher("../addProduct.jsp").forward(request, response);
+            request.getRequestDispatcher("AdminMode/addProduct.jsp").forward(request, response);
         }
     }
 }

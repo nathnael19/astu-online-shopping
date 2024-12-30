@@ -19,7 +19,7 @@ public class UpdateProfile extends HttpServlet {
 
         Part file = request.getPart("picturePicture");
         String imageFileName = file.getSubmittedFileName();
-        String uploadPath = "C:/Users/DELL/Documents/NetBeansProjects/AstuOnlineShopping/web/productImages/" + imageFileName;
+        String uploadPath = "C:/Users/DELL/Desktop/clone/astu-online-shopping/web/productImages/" + imageFileName;
         HttpSession session = request.getSession();
 
         int userId = (Integer) session.getAttribute("userId");
@@ -47,18 +47,22 @@ public class UpdateProfile extends HttpServlet {
             stmt.setString(4, address);
             stmt.setString(5, city);
             stmt.setString(6, region);
-            stmt.setString(7,imageFileName);
+            stmt.setString(7, imageFileName);
 
             int row = stmt.executeUpdate();
 
             if (row > 0) {
-                response.sendRedirect("UserMode/userProfile.jsp?msg=success");
+                request.setAttribute("errorMessage", "Successfully Updated.");
+                request.getRequestDispatcher("UserMode/userProfile.jsp").forward(request, response);
             } else {
-                response.sendRedirect("UserMode/userProfile.jsp?msg=fail");
+                request.setAttribute("errorMessage", "Something went wrong!. please try again!");
+                request.getRequestDispatcher("UserMode/userProfile.jsp").forward(request, response);
             }
 
         } catch (IOException | SQLException e) {
             e.printStackTrace();
+            request.setAttribute("errorMessage", "Something went wrong!.");
+                request.getRequestDispatcher("UserMode/userProfile.jsp").forward(request, response);
         }
     }
 }

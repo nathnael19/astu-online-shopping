@@ -23,9 +23,10 @@
                 if (row > 0) {
                     response.sendRedirect("cart.jsp");
                 }
-            }else if(quantity <=1){
-            response.sendRedirect("cart.jsp");
-    }
+            } else if (quantity <= 1) {
+                request.setAttribute("errorMessage", "Quantity cannot be less than 1!");
+                request.getRequestDispatcher("cart.jsp").forward(request, response);
+            }
         }
 
     } catch (Exception e) {

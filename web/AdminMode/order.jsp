@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Orders - Online Shopping</title>
-        <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"/>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
     </head>
     <body>
         <%@include file="adminNav.jsp"%>
@@ -56,6 +56,6 @@
                 </table>
             </div>
         </div>
-        <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>

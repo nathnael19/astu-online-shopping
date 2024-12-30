@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Online Shopping</title>
-        <link rel="stylesheet" href="../bootstrap/bootstrap.min.css"/>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
     </head>
     <body>
 
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                     <div style="text-align: center; margin-top: 10px;">
-                        <a href="cart.jsp?productId=<%=rs.getInt(1)%>" class="btn btn-primary btn-sm">Add to Cart</a>
+                        <a href="cartAction.jsp?productId=<%=rs.getInt(1)%>" class="btn btn-primary btn-sm">Add to Cart</a>
                     </div>
                 </div>
             </div>
@@ -74,6 +74,6 @@
             <%}%>
         </div>
 
-        <script src="../bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>

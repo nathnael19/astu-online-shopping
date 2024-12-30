@@ -6,6 +6,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>My Orders</title>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
+        <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </head>
     <body>
         <%@include file="userNav.jsp" %>
@@ -50,6 +52,5 @@
                 </table>
             </div>
         </div>
-        <script src="../bootstrap/bootstrap.bundle.min.js"></script>
     </body>
 </html>
