@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
     </head>
     <body>
-        <%
+                <%
             String username9 = (String) session.getAttribute("userName");
             if (username9 == null) {
                 // User not logged in, redirect to login page
@@ -48,20 +48,28 @@
                             ResultSet rs = st.executeQuery(qq);
                             while (rs.next()) {
                     %>
+                    <%if (rs.getString(5).equals("Received")) {%>
+                        <%} else {%>
                     <tbody>
                         <tr>
+
                             <td><%=rs.getString(1)%></td>
                             <td><%=rs.getString(2)%></td>
                             <td><%=rs.getString(3)%></td>
                             <td><%=rs.getString(4)%></td>
                             <td><%=rs.getString(5)%></td>
                             <td><%=rs.getString(6)%></td>
+                            <%if (rs.getString(5).equals("Shipping")) {%>
+
+                            <%} else {%>
                             <td>
                                 <a href="acceptOrder.jsp?orderId=<%=rs.getInt(7)%>" class="btn btn-success btn-sm">Accept</a>
                                 <a href="rejectOrder.jsp?orderId=<%=rs.getInt(7)%>" class="btn btn-danger btn-sm ms-2">Reject</a>
                             </td>
+                            <%}%>
                         </tr>
                         <%    }
+                                }
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
