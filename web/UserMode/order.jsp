@@ -10,7 +10,7 @@
         <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <%
+               <%
             String username15 = (String) session.getAttribute("userName");
             if (username15 == null) {
                 // User not logged in, redirect to login page
@@ -23,7 +23,6 @@
     response.setHeader("Pragma", "no-cache"); // HTTP 1.0
     response.setDateHeader("Expires", 0); // Prevent caching
 %>
-
         <%@include file="userNav.jsp" %>
         <div class="my-6">
             <div class="table-responsive">
@@ -36,16 +35,19 @@
                             <th>Payment Method</th>
                             <th>Status</th>
                             <th>Date</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
-                    <%                       
-                        int userId = (Integer)session.getAttribute("userId");
+                    <%
+                        int userId = (Integer) session.getAttribute("userId");
+                        String status = "";
                         try {
                             Connection con = DatabaseProvider.getConn();
-                            String qq = "SELECT p.name,p.category,o.totalPrice,o.paymentMethod,o.status ,o.createdAt FROM Orders o JOIN Products p ON o.productId = p.productId where o.userId='"+userId+"';";
+                            String qq = "SELECT p.name,p.category,o.totalPrice,o.paymentMethod,o.status ,o.createdAt,o.orderId FROM Orders o JOIN Products p ON o.productId = p.productId where o.userId='" + userId + "';";
                             Statement st = con.createStatement();
                             ResultSet rs = st.executeQuery(qq);
                             while (rs.next()) {
+                                status = rs.getString(5);
                     %>
                     <tbody>
                         <tr>
@@ -53,8 +55,12 @@
                             <td><%=rs.getString(2)%></td>
                             <td><%=rs.getString(3)%></td>
                             <td><%=rs.getString(4)%></td>
-                            <td><%=rs.getString(5)%></td>
+                            <td><%=status%></td>
+
                             <td><%=rs.getString(6)%></td>
+                            <%if (status.equals("Shipping")) {%>
+                            <td><a href="acceptOrder.jsp?orderId=<%=rs.getInt(7)%>" class="btn btn-success btn-sm">Received</a><td>
+                                <%}%>
 
                         </tr>
                         <%    }
