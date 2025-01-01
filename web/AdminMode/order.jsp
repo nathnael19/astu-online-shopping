@@ -61,7 +61,7 @@
                             <td><%=rs.getString(6)%></td>
                             <%if (rs.getString(5).equals("Shipping")) {%>
 
-                            <%} else {%>
+                            <%}else if(rs.getString(5).equals("Rejected")){} else {%>
                             <td>
                                 <a href="acceptOrder.jsp?orderId=<%=rs.getInt(7)%>" class="btn btn-success btn-sm">Accept</a>
                                 <a href="rejectOrder.jsp?orderId=<%=rs.getInt(7)%>" class="btn btn-danger btn-sm ms-2">Reject</a>

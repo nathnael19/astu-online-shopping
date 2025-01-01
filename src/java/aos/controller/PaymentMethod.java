@@ -45,7 +45,7 @@ public class PaymentMethod extends HttpServlet {
                 Statement stmtt = connection.createStatement();
                 int row2 = stmtt.executeUpdate(deleteFromCart);
                 if (row2 > 0) {
-                    response.sendRedirect("UserMode/order.jsp");
+                    response.sendRedirect("UserMode/paymentSuccess.jsp");
                 }
             } else {
                 response.sendRedirect("UserMode/homePage.jsp");
